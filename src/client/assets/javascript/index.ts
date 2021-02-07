@@ -7,6 +7,15 @@ var store = {
 	race_id: undefined,
 }
 
+// Interface
+interface Racers {
+	id: number;
+	driver_name: string;
+	top_speed: number;
+	acceleration: number;
+	handling: number;
+}
+
 // We need our javascript to wait until the DOM is loaded
 document.addEventListener("DOMContentLoaded", function() {
 	onPageLoad()
@@ -22,7 +31,7 @@ async function onPageLoad() {
 			})
 
 		getRacers()
-			.then((racers) => {
+			.then((racers):void => {
 				const html = renderRacerCars(racers)
 				renderAt('#racers', html)
 			})
@@ -324,7 +333,7 @@ function getTracks(): Promise<{value: any;}> {
 	return fetch(`${SERVER}/api/tracks`).then(res => res.json())
 }
 
-function getRacers(): Promise<{value: any;}> {
+function getRacers(): Promise<{value: Racers[]}> {
 	// GET request to `${SERVER}/api/cars`
 	return fetch(`${SERVER}/api/cars`).then(res => res.json())
 
