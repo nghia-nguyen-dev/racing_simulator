@@ -8,7 +8,7 @@ var store = {
 }
 
 // Interface
-interface Tracks {
+interface Track {
 	id: number;
 	name: string;
 	segments: [number][];
@@ -24,14 +24,14 @@ interface Racers {
 
 // We need our javascript to wait until the DOM is loaded
 document.addEventListener("DOMContentLoaded", function() {
-	onPageLoad()
+	onPageLoad() // race.html
 	setupClickHandlers()
 })
 
-async function onPageLoad() {
+async function onPageLoad():void {
 	try {
 		getTracks()
-			.then(tracks => {
+			.then((tracks: Track[]):void => {
 				const html = renderTrackCards(tracks)
 				renderAt('#tracks', html)
 			})
@@ -215,7 +215,7 @@ function renderRacerCard(racer) {
 	`
 }
 
-function renderTrackCards(tracks: Tracks[]):string {
+function renderTrackCards(tracks: Track[]):string {
 	if (!tracks.length) {
 		return `
 			<h4>Loading Tracks...</4>
@@ -334,7 +334,7 @@ function defaultFetchOpts() {
 
 // TODO - Make a fetch call (with error handling!) to each of the following API endpoints 
 
-function getTracks(): Promise<{value: Tracks[];}> {
+function getTracks(): Promise<{value: Track[];}> {
 	// GET request to `${SERVER}/api/tracks`
 	return fetch(`${SERVER}/api/tracks`).then(res => res.json())
 }
