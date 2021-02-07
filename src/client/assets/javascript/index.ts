@@ -14,7 +14,7 @@ interface Track {
 	segments: [number][];
 }
 
-interface Racers {
+interface Racer {
 	id: number;
 	driver_name: string;
 	top_speed: number;
@@ -339,7 +339,7 @@ function getTracks(): Promise<{value: Track[];}> {
 	return fetch(`${SERVER}/api/tracks`).then(res => res.json())
 }
 
-function getRacers(): Promise<{value: Racers[]}> {
+function getRacers(): Promise<{value: Racer[]}> {
 	// GET request to `${SERVER}/api/cars`
 	return fetch(`${SERVER}/api/cars`).then(res => res.json())
 
