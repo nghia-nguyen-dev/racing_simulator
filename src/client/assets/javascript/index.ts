@@ -8,6 +8,12 @@ var store = {
 }
 
 // Interface
+interface Tracks {
+	id: number;
+	name: string;
+	segments: [number][];
+}
+
 interface Racers {
 	id: number;
 	driver_name: string;
