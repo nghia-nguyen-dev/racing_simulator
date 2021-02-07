@@ -309,7 +309,7 @@ function raceProgress(positions) {
 	`
 }
 
-function renderAt(element, html) {
+function renderAt(element: string, html: string):void {
 	const node = document.querySelector(element)
 
 	node.innerHTML = html
