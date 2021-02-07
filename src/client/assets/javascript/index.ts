@@ -37,7 +37,7 @@ async function onPageLoad():void {
 			})
 
 		getRacers()
-			.then((racers):void => {
+			.then((racers: Racer[]):void => {
 				const html = renderRacerCars(racers)
 				renderAt('#racers', html)
 			})
@@ -186,7 +186,7 @@ function handleAccelerate() {
 // HTML VIEWS ------------------------------------------------
 // Provided code - do not remove
 
-function renderRacerCars(racers) {
+function renderRacerCars(racers: Racer[]):string {
 	if (!racers.length) {
 		return `
 			<h4>Loading Racers...</4>
