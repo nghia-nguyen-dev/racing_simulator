@@ -222,7 +222,7 @@ function renderTrackCards(tracks: Track[]):string {
 		`
 	}
 
-	const results = tracks.map(renderTrackCard).join('')
+	const results = tracks.map(renderTrackCard).join('');
 
 	return `
 		<ul id="tracks">
@@ -231,7 +231,7 @@ function renderTrackCards(tracks: Track[]):string {
 	`
 }
 
-function renderTrackCard(track) {
+function renderTrackCard(track: Track):string {
 	const { id, name } = track
 
 	return `
