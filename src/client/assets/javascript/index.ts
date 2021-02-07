@@ -324,7 +324,7 @@ function getTracks(): Promise<{value: any;}> {
 	return fetch(`${SERVER}/api/tracks`).then(res => res.json())
 }
 
-function getRacers() {
+function getRacers(): Promise<{value: any;}> {
 	// GET request to `${SERVER}/api/cars`
 }
 
