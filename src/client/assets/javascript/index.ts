@@ -202,7 +202,7 @@ function renderRacerCars(racers: Racer[]):string {
 	`
 }
 
-function renderRacerCard(racer) {
+function renderRacerCard(racer: Racer) {
 	const { id, driver_name, top_speed, acceleration, handling } = racer
 
 	return `
