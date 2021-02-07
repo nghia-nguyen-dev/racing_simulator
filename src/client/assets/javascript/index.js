@@ -145,7 +145,7 @@ function renderRacerCars(racers) {
     const results = racers.map(renderRacerCard).join('');
     return `
 		<ul id="racers">
-			${reuslts}
+			${results}
 		</ul>
 	`;
 }

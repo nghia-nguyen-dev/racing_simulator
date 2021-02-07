@@ -197,7 +197,7 @@ function renderRacerCars(racers: Racer[]):string {
 
 	return `
 		<ul id="racers">
-			${reuslts}
+			${results}
 		</ul>
 	`
 }
