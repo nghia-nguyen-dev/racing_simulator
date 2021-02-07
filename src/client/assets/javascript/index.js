@@ -273,6 +273,7 @@ function getTracks() {
 }
 function getRacers() {
     // GET request to `${SERVER}/api/cars`
+    return fetch(SERVER + "/api/cars").then(function (res) { return res.json(); });
 }
 function createRace(player_id, track_id) {
     player_id = parseInt(player_id);

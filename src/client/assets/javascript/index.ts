@@ -326,6 +326,8 @@ function getTracks(): Promise<{value: any;}> {
 
 function getRacers(): Promise<{value: any;}> {
 	// GET request to `${SERVER}/api/cars`
+	return fetch(`${SERVER}/api/cars`).then(res => res.json())
+
 }
 
 function createRace(player_id, track_id) {
