@@ -334,7 +334,7 @@ function defaultFetchOpts() {
 
 // TODO - Make a fetch call (with error handling!) to each of the following API endpoints 
 
-function getTracks(): Promise<{value: any;}> {
+function getTracks(): Promise<{value: Tracks[];}> {
 	// GET request to `${SERVER}/api/tracks`
 	return fetch(`${SERVER}/api/tracks`).then(res => res.json())
 }
