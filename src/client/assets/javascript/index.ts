@@ -215,7 +215,7 @@ function renderRacerCard(racer) {
 	`
 }
 
-function renderTrackCards(tracks) {
+function renderTrackCards(tracks: Tracks[]):string {
 	if (!tracks.length) {
 		return `
 			<h4>Loading Tracks...</4>
