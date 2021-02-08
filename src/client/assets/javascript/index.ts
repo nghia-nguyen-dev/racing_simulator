@@ -336,12 +336,12 @@ function defaultFetchOpts() {
 
 function getTracks(): Promise<{value: Track[];}> {
 	// GET request to `${SERVER}/api/tracks`
-	return fetch(`${SERVER}/api/tracks`).then(res => res.json())
+	return fetch(`${SERVER}/api/tracks`).then(res => res.json()).catch(err => console.log(err))
 }
 
 function getRacers(): Promise<{value: Racer[]}> {
 	// GET request to `${SERVER}/api/cars`
-	return fetch(`${SERVER}/api/cars`).then(res => res.json())
+	return fetch(`${SERVER}/api/cars`).then(res => res.json()).catch(err => console.log(err))
 
 }
 
