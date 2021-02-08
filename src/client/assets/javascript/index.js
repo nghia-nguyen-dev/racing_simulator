@@ -2,7 +2,10 @@
 // PROVIDED CODE BELOW (LINES 1 - 80) DO NOT REMOVE
 // The store will hold all information needed globally
 var store = {
-    track_id: undefined,
+    track: {
+        id: undefined,
+        name: undefined,
+    },
     player_id: undefined,
     race_id: undefined,
 };

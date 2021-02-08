@@ -2,7 +2,10 @@
 
 // The store will hold all information needed globally
 var store: Store  = {
-	track_id: undefined,
+	track: {
+		id: undefined,
+		name: undefined,
+	},
 	player_id: undefined,
 	race_id: undefined,
 }
@@ -23,7 +26,10 @@ interface Racer {
 }
 
 interface Store {
-	track_id: undefined | string;
+	track: {
+		id: undefined | string;
+		name: undefined | string;
+	};
 	race_id: undefined | string;
 	player_id: undefined | string;
 }
