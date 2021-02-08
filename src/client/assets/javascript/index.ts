@@ -153,7 +153,7 @@ async function runCountdown() {
 	}
 }
 
-function handleSelectPodRacer(target) {
+function handleSelectPodRacer(target: Element) {
 	console.log("selected a pod", target.id)
 
 	// remove class selected from all racer options
