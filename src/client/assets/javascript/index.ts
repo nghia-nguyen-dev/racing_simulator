@@ -123,7 +123,7 @@ async function handleCreateRace() {
 	store.race_id = race.ID
 	// The race has been created, now start the countdown
 	// TODO - call the async function runCountdown
-
+	runCountdown();
 	// TODO - call the async function startRace
 
 	// TODO - call the async function runRace
@@ -156,15 +156,24 @@ async function runCountdown() {
 		await delay(1000)
 		let timer = 3
 
-		return new Promise(resolve => {
+		return new Promise((resolve, reject):void => {
 			// TODO - use Javascript's built in setInterval method to count down once per second
+			const id = setInterval(() => {
+				// TODO - if the countdown is done, clear the interval, resolve the promise, and return
+				// stopping condition
+				if (timer <= 0) {
+					clearInterval(id);
+					resolve('countdown complete!');
+					return;
+				}
 
-			// run this DOM manipulation to decrement the countdown for the user
-			document.getElementById('big-numbers').innerHTML = --timer
+				// run this DOM manipulation to decrement the countdown for the user
+				document.getElementById('big-numbers').innerHTML = --timer
 
-			// TODO - if the countdown is done, clear the interval, resolve the promise, and return
-
+			}, 1000)
+			
 		})
+
 	} catch(error) {
 		console.log(error);
 	}
