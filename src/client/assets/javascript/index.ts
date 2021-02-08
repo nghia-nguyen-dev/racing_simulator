@@ -11,7 +11,7 @@ var store = {
 interface Track {
 	id: number;
 	name: string;
-	segments: [number][];
+	segments: number[][];
 }
 
 interface Racer {
