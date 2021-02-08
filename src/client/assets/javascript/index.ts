@@ -359,7 +359,7 @@ function getRacers(): Promise<{value: Racer[]}> {
 
 }
 
-function createRace(player_id, track_id) {
+function createRace(player_id: number, track_id: number) {
 	player_id = parseInt(player_id)
 	track_id = parseInt(track_id)
 	const body = { player_id, track_id }
