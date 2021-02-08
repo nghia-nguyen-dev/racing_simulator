@@ -102,7 +102,7 @@ async function delay(ms) {
 // This async function controls the flow of the race, add the logic and error handling
 async function handleCreateRace() {
 	// render starting UI
-	renderAt('#race', renderRaceStartView(store.track_id, store.player_id))
+	renderAt('#race', renderRaceStartView(store.track.name, store.player_id))
 
 	// TODO - Get player_id and track_id from the store
 	
