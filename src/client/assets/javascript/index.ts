@@ -24,7 +24,7 @@ interface Racer {
 
 interface Store {
 	track_id: undefined | string;
-	race: undefined | string;
+	race_id: undefined | string;
 	player_id: undefined | string;
 }
 
