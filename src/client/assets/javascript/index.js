@@ -118,6 +118,7 @@ function handleSelectPodRacer(target) {
     // add class selected to current target
     target.classList.add('selected');
     // TODO - save the selected racer to the store
+    store.race_id = target.id;
 }
 function handleSelectTrack(target) {
     console.log("selected a track", target.id);
