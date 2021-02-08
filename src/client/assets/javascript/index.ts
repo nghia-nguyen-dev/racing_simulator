@@ -96,7 +96,7 @@ async function delay(ms) {
 // This async function controls the flow of the race, add the logic and error handling
 async function handleCreateRace() {
 	// render starting UI
-	renderAt('#race', renderRaceStartView())
+	renderAt('#race', renderRaceStartView(store.track_id, store.race_id))
 
 	// TODO - Get player_id and track_id from the store
 	
@@ -255,7 +255,7 @@ function renderCountdown(count) {
 	`
 }
 
-function renderRaceStartView(track, racers) {
+function renderRaceStartView(track: string | undefined, racers: string | undefined) {
 	return `
 		<header>
 			<h1>Race: ${track.name}</h1>
