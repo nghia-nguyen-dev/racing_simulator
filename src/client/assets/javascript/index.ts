@@ -242,7 +242,7 @@ function renderTrackCard(track: Track):string {
 	const { id, name } = track
 
 	return `
-		<li id="${id}" class="card track">
+		<li id="${id}" class="card track" data-track-name="${name}">
 			<h3>${name}</h3>
 		</li>
 	`
