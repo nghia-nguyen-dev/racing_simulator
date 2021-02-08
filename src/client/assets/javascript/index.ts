@@ -255,7 +255,7 @@ function renderTrackCard(track: Track):string {
 	`
 }
 
-function renderCountdown(count) {
+function renderCountdown(count: number) {
 	return `
 		<h2>Race Starts In...</h2>
 		<p id="big-numbers">${count}</p>
