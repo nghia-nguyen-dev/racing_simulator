@@ -1,7 +1,7 @@
 // PROVIDED CODE BELOW (LINES 1 - 80) DO NOT REMOVE
 
 // The store will hold all information needed globally
-var store = {
+var store: Store  = {
 	track_id: undefined,
 	player_id: undefined,
 	race_id: undefined,
@@ -20,6 +20,11 @@ interface Racer {
 	top_speed: number;
 	acceleration: number;
 	handling: number;
+}
+
+interface Store {
+	track_id: undefined | string;
+	[key: string]: any;
 }
 
 // We need our javascript to wait until the DOM is loaded
@@ -176,7 +181,7 @@ function handleSelectTrack(target: Element) {
 
 	// TODO - save the selected track id to the store
 	
-}
+}	
 
 function handleAccelerate() {
 	console.log("accelerate button clicked")
