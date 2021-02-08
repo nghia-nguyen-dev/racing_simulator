@@ -188,7 +188,8 @@ function handleSelectTrack(target: Element) {
 	target.classList.add('selected')
 
 	// TODO - save the selected track id to the store
-	store.track_id = target.id;
+	store.track.id = target.id;
+	store.track.name = target.dataset.trackName;
 }	
 
 function handleAccelerate() {
