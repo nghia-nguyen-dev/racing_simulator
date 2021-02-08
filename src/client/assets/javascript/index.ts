@@ -24,7 +24,8 @@ interface Racer {
 
 interface Store {
 	track_id: undefined | string;
-	[key: string]: any;
+	race: undefined | string;
+	player_id: undefined | string;
 }
 
 // We need our javascript to wait until the DOM is loaded
@@ -165,6 +166,7 @@ function handleSelectPodRacer(target) {
 	target.classList.add('selected')
 
 	// TODO - save the selected racer to the store
+	
 }
 
 function handleSelectTrack(target: Element) {
