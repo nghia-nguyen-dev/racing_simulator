@@ -25,6 +25,17 @@ interface Racer {
 	handling: number;
 }
 
+interface Race {
+	Cars: Racer[];
+	ID: number;
+	PlayerID: number;
+	Results: {
+		positions: Racer[];
+		status: string;
+	};
+	Track: Track;
+}
+
 interface Store {
 	track: {
 		id: undefined | string;
