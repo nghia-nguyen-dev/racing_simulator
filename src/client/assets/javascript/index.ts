@@ -162,7 +162,7 @@ function handleSelectPodRacer(target) {
 	// TODO - save the selected racer to the store
 }
 
-function handleSelectTrack(target) {
+function handleSelectTrack(target: Element) {
 	console.log("selected a track", target.id)
 
 	// remove class selected from all track options
