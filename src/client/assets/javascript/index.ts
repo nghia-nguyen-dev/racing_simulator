@@ -36,6 +36,19 @@ interface Race {
 	Track: Track;
 }
 
+interface RaceInfo {
+	positions: {
+		acceleration: number;
+		driver_name: string;
+		handling: number;
+		id: number;
+		segment: number;
+		speed: number;
+		top_speed: number;
+	}[];
+	status: `in-progress` | any;
+}
+
 interface Store {
 	track: {
 		id: undefined | string;
