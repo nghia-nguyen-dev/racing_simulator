@@ -127,13 +127,13 @@ async function handleCreateRace() {
 	// TODO - call the async function startRace
 	await startRace(store.race_id);
 	// TODO - call the async function runRace
-
+	runRace(store.race_id);
 }
 
 function runRace(raceID) {
 	return new Promise(resolve => {
 	// TODO - use Javascript's built in setInterval method to get race info every 500ms
-
+	
 	/* 
 		TODO - if the race info status property is "in-progress", update the leaderboard by calling:
 

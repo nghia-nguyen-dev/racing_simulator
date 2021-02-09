@@ -80,6 +80,7 @@ async function handleCreateRace() {
     // TODO - call the async function startRace
     await startRace(store.race_id);
     // TODO - call the async function runRace
+    runRace(store.race_id);
 }
 function runRace(raceID) {
     return new Promise(resolve => {
