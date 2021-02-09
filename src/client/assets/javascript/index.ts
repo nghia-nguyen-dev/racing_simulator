@@ -352,7 +352,7 @@ function resultsView(positions) {
 	`
 }
 
-function raceProgress(positions) {
+function raceProgress(positions: RacerPos[]) {
 	let userPlayer = positions.find(e => e.id === store.player_id)
 	userPlayer.driver_name += " (you)"
 
