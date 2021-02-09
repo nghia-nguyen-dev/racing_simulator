@@ -105,7 +105,8 @@ function runRace(raceID) {
                     renderAt('#race', resultsView(raceInfo.positions)); // to render the results view
                     resolve(raceInfo); // resolve the promise
                 }
-            });
+            })
+                .catch(err => console.log(err));
         }, 500);
     });
     // remember to add error handling for the Promise

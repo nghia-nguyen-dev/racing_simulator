@@ -178,7 +178,7 @@ function runRace(raceID: number) {
 					}
 
 				})
-			
+				.catch(err => console.log(err))
 
 		}, 500)
 	})
