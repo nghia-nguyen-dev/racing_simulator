@@ -398,13 +398,15 @@ function getRace(id) {
 	// GET request to `${SERVER}/api/races/${id}`
 }
 
-function startRace(id) {
+function startRace(id: string) {
+
 	return fetch(`${SERVER}/api/races/${id}/start`, {
 		method: 'POST',
 		...defaultFetchOpts(),
 	})
 	.then(res => res.json())
 	.catch(err => console.log("Problem with getRace request::", err))
+	
 }
 
 function accelerate(id) {
