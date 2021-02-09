@@ -251,6 +251,7 @@ function handleSelectTrack(target: Element) {
 function handleAccelerate() {
 	console.log("accelerate button clicked")
 	// TODO - Invoke the API call to accelerate
+	accelerate(store.player_id)
 }
 
 // HTML VIEWS ------------------------------------------------
@@ -446,8 +447,14 @@ function startRace(id: number) {
 
 }
 
-function accelerate(id) {
+function accelerate(id: string) {
 	// POST request to `${SERVER}/api/races/${id}/accelerate`
 	// options parameter provided as defaultFetchOpts
 	// no body or datatype needed for this request
+
+	fetch(`${SERVER}/api/races/${id}/accelerate`, {
+		method: 'POST',
+		...defaultFetchOpts(),
+	})
+	
 }
