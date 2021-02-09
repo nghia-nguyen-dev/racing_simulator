@@ -142,11 +142,13 @@ async function handleCreateRace() {
 }
 
 function runRace(raceID: number) {
+
 	return new Promise(resolve => {
 	// TODO - use Javascript's built in setInterval method to get race info every 500ms
 	const id = setInterval(() => {
 		getRace(store.race_id)
-			.then(res => console.log(res))
+			.then(res => res.json())
+			.then((data) => console.log(data))
 	}, 500)
 	/* 
 		TODO - if the race info status property is "in-progress", update the leaderboard by calling:
