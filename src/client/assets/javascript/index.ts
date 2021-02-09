@@ -48,7 +48,7 @@ interface RacerPos {
 
 interface RaceInfo {
 	positions: RacerPos[];
-	status: `in-progress` | 'finished';
+	status: `in-progress` | 'finished' | 'unstarted';
 }
 
 interface Store {
