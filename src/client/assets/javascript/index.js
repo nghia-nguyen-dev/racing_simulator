@@ -76,8 +76,9 @@ async function handleCreateRace() {
     store.race_id = race.ID;
     // The race has been created, now start the countdown
     // TODO - call the async function runCountdown
-    runCountdown();
+    await runCountdown();
     // TODO - call the async function startRace
+    startRace(store.race_id);
     // TODO - call the async function runRace
 }
 function runRace(raceID) {

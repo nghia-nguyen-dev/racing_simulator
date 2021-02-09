@@ -123,9 +123,9 @@ async function handleCreateRace() {
 	store.race_id = race.ID
 	// The race has been created, now start the countdown
 	// TODO - call the async function runCountdown
-	runCountdown();
+	await runCountdown();
 	// TODO - call the async function startRace
-
+	startRace(store.race_id);
 	// TODO - call the async function runRace
 }
 
@@ -171,7 +171,7 @@ async function runCountdown() {
 				document.getElementById('big-numbers').innerHTML = --timer
 
 			}, 1000)
-			
+
 		})
 
 	} catch(error) {
