@@ -41,7 +41,7 @@ interface Store {
 		id: undefined | string;
 		name: undefined | string;
 	};
-	race_id: undefined | string;
+	race_id: undefined | number;
 	player_id: undefined | string;
 }
 
@@ -125,8 +125,9 @@ async function handleCreateRace() {
 	// TODO - call the async function runCountdown
 	await runCountdown();
 	// TODO - call the async function startRace
-	startRace(store.race_id);
+	await startRace(store.race_id);
 	// TODO - call the async function runRace
+
 }
 
 function runRace(raceID) {
@@ -398,7 +399,7 @@ function getRace(id) {
 	// GET request to `${SERVER}/api/races/${id}`
 }
 
-function startRace(id: string) {
+function startRace(id: number) {
 
 	return fetch(`${SERVER}/api/races/${id}/start`, {
 		method: 'POST',
@@ -406,7 +407,7 @@ function startRace(id: string) {
 	})
 	.then(res => res.json())
 	.catch(err => console.log("Problem with getRace request::", err))
-	
+
 }
 
 function accelerate(id) {
