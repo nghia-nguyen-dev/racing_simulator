@@ -36,16 +36,18 @@ interface Race {
 	Track: Track;
 }
 
+interface RacerPos {
+	acceleration: number;
+	driver_name: string;
+	handling: number;
+	id: number;
+	segment: number;
+	speed: number;
+	top_speed: number;
+}
+
 interface RaceInfo {
-	positions: {
-		acceleration: number;
-		driver_name: string;
-		handling: number;
-		id: number;
-		segment: number;
-		speed: number;
-		top_speed: number;
-	}[];
+	positions: RacerPos[];
 	status: `in-progress` | any;
 }
 
@@ -161,7 +163,11 @@ function runRace(raceID: number) {
 	const id = setInterval(() => {
 		getRace(store.race_id)
 			.then(res => res.json())
-			.then((data: RaceInfo) => console.log(data))
+			.then((raceInfo: RaceInfo) => {
+				if (raceInfo.status === 'in-progress') {
+					renderAt('#leaderBoard', raceProgress(raceInfo.positions));
+				}
+			})
 	}, 500)
 	/* 
 		TODO - if the race info status property is "in-progress", update the leaderboard by calling:
