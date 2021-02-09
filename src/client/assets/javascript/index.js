@@ -94,19 +94,19 @@ function runRace(raceID) {
             getRace(store.race_id)
                 .then(res => res.json())
                 .then((raceInfo) => {
+                console.log(raceInfo);
                 // TODO - if the race info status property is "in-progress", update the leaderboard by calling: renderAt('#leaderBoard', raceProgress(res.positions))
                 if (raceInfo.status === 'in-progress') {
                     renderAt('#leaderBoard', raceProgress(raceInfo.positions));
                 }
+                else {
+                    // TODO - if the race info status property is "finished", run the following:
+                    clearInterval(id); // to stop the interval from repeating
+                    renderAt('#race', resultsView(raceInfo.positions)); // to render the results view
+                    resolve(raceInfo); // resolve the promise
+                }
             });
         }, 500);
-        /*
-            TODO - if the race info status property is "finished", run the following:
-    
-            clearInterval(raceInterval) // to stop the interval from repeating
-            renderAt('#race', resultsView(res.positions)) // to render the results view
-            reslove(res) // resolve the promise
-        */
     });
     // remember to add error handling for the Promise
 }
