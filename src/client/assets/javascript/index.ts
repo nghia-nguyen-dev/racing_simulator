@@ -164,9 +164,10 @@ function runRace(raceID: number) {
 		getRace(store.race_id)
 			.then(res => res.json())
 			.then((raceInfo: RaceInfo) => {
-				if (raceInfo.status === 'in-progress') {
-					renderAt('#leaderBoard', raceProgress(raceInfo.positions));
-				}
+				// if (raceInfo.status === 'in-progress') {
+				// 	renderAt('#leaderBoard', raceProgress(raceInfo.positions));
+				// }
+				console.log(raceInfo);
 			})
 	}, 500)
 	/* 
@@ -353,7 +354,7 @@ function resultsView(positions) {
 }
 
 function raceProgress(positions: RacerPos[]) {
-	let userPlayer = positions.find(e => e.id === store.player_id)
+	let userPlayer = positions.find((pos: RacerPos) => pos.id === parseInt(store.player_id))
 	userPlayer.driver_name += " (you)"
 
 	positions = positions.sort((a, b) => (a.segment > b.segment) ? -1 : 1)
