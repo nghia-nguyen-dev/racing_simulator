@@ -164,17 +164,13 @@ function runRace(raceID: number) {
 		getRace(store.race_id)
 			.then(res => res.json())
 			.then((raceInfo: RaceInfo) => {
-				// if (raceInfo.status === 'in-progress') {
-				// 	renderAt('#leaderBoard', raceProgress(raceInfo.positions));
-				// }
-				console.log(raceInfo);
+				// TODO - if the race info status property is "in-progress", update the leaderboard by calling: renderAt('#leaderBoard', raceProgress(res.positions))
+				if (raceInfo.status === 'in-progress') {
+					renderAt('#leaderBoard', raceProgress(raceInfo.positions));
+				}
+
 			})
 	}, 500)
-	/* 
-		TODO - if the race info status property is "in-progress", update the leaderboard by calling:
-
-		renderAt('#leaderBoard', raceProgress(res.positions))
-	*/
 
 	/* 
 		TODO - if the race info status property is "finished", run the following:
