@@ -447,12 +447,12 @@ function startRace(id: number) {
 
 }
 
-function accelerate(id: string) {
+function accelerate(raceID: string) {
 	// POST request to `${SERVER}/api/races/${id}/accelerate`
 	// options parameter provided as defaultFetchOpts
 	// no body or datatype needed for this request
 
-	fetch(`${SERVER}/api/races/${id}/accelerate`, {
+	fetch(`${SERVER}/api/races/${raceID}/accelerate`, {
 		method: 'POST',
 		...defaultFetchOpts(),
 	})
