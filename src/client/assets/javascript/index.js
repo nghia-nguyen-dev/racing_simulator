@@ -322,11 +322,11 @@ function startRace(id) {
         .then(res => res.json())
         .catch(err => console.log("Problem with getRace request::", err));
 }
-function accelerate(id) {
+function accelerate(raceID) {
     // POST request to `${SERVER}/api/races/${id}/accelerate`
     // options parameter provided as defaultFetchOpts
     // no body or datatype needed for this request
-    fetch(`${SERVER}/api/races/${id}/accelerate`, {
+    fetch(`${SERVER}/api/races/${raceID}/accelerate`, {
         method: 'POST',
         ...defaultFetchOpts(),
     });
