@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // The store will hold all information needed globally
 var store = {
     track: {

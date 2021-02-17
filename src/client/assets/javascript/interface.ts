@@ -1,10 +1,10 @@
-interface Track {
+ export interface Track {
 	id: number;
 	name: string;
 	segments: number[][];
 }
 
-interface Racer {
+ export interface Racer {
 	id: number;
 	driver_name: string;
 	top_speed: number;
@@ -12,7 +12,7 @@ interface Racer {
 	handling: number;
 }
 
-interface Race {
+ export interface Race {
 	Cars: Racer[];
 	ID: number;
 	PlayerID: number;
@@ -23,7 +23,7 @@ interface Race {
 	Track: Track;
 }
 
-interface RacerPos {
+ export interface RacerPos {
 	acceleration: number;
 	driver_name: string;
 	handling: number;
@@ -33,12 +33,12 @@ interface RacerPos {
 	top_speed: number;
 }
 
-interface RaceInfo {
+ export interface RaceInfo {
 	positions: RacerPos[];
 	status: `in-progress` | 'finished' | 'unstarted';
 }
 
-interface Store {
+ export interface Store {
 	track: {
 		id: undefined | string;
 		name: undefined | string;
@@ -47,3 +47,4 @@ interface Store {
 	player_id: undefined | string;
 }
 
+export * from './interface'

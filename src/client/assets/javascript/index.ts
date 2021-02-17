@@ -1,4 +1,4 @@
-
+import {Track,Racer,Race,RacerPos,RaceInfo,Store} from './interface'
 
 // The store will hold all information needed globally
 var store: Store = {
